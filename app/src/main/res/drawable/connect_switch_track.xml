@@ -4,6 +4,30 @@
      connected state stays a clean orange fill. -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Focused with a TV remote: same fills with a thick ring, since the switch has
+         no background to show focus. Must come before the unfocused items. -->
+    <item android:state_checked="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <size android:width="88dp" android:height="44dp" />
+            <corners android:radius="100dp" />
+            <solid android:color="@color/connect_track_on" />
+            <stroke
+                android:width="3dp"
+                android:color="@color/nb_txt" />
+        </shape>
+    </item>
+
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <size android:width="88dp" android:height="44dp" />
+            <corners android:radius="100dp" />
+            <solid android:color="@color/connect_track_off" />
+            <stroke
+                android:width="3dp"
+                android:color="@color/nb_orange" />
+        </shape>
+    </item>
+
     <!-- Connected: orange fill, no border -->
     <item android:state_checked="true">
         <shape android:shape="rectangle">
